@@ -2,10 +2,15 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Todo
 from .forms import TodoForm
+
 from django.contrib import messages
 
+#cbv
+from django.views.generic import ListView,CreateView
+from django.urls import reverse_lazy
+
 def home(request):
-    todos = Todo.objects.all()
+    todos = Todo.objects.all().order_by('-priority')
     form = TodoForm()
     
     context = {
@@ -13,6 +18,22 @@ def home(request):
         "form" : form
     }
     return render(request, "todo/home.html", context)
+
+class TodoList(ListView):
+    model = Todo
+    #default context_object_name todo_list
+    context_object_name = 'todos'
+    #default template_name todo/todo_list.html
+    # ordering= ['priority'] #sıralama işlemi asc
+    ordering= ['-priority'] #sıralama işlemi desc
+
+
+class TodoCreate(CreateView):
+    model = Todo
+    form_class = TodoForm
+    template_name = "todo/todo_add.html" #default u todo/todo_form.html
+    success_url = reverse_lazy("list")
+
 
 
 def todo_create(request):
