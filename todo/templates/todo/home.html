@@ -1,5 +1,6 @@
 {% extends 'todo/base.html' %} 
 
+{% block title %} Home {% endblock title %} 
 
 {% block content %}
 
@@ -51,11 +52,11 @@
                                     <td>{{todo.title}}</td>
                                     {% if todo.is_done == True%}
                                     <td>
-                                        ✅
+                                        <a href="{% url 'done' todo.id %}">✅</a>
                                     </td>
                                     {% elif todo.is_done == False %}
                                     <td>
-                                        💤
+                                        <a href="{% url 'done' todo.id %}"> 💤 </a>
                                     </td>
                                     {%endif%}
 
@@ -74,10 +75,10 @@
                                     </td>
 
                                     <td>
-                                        <a href="delete/{{todo.id}}" title="Delete" class="">🗑️</a> 
+                                        <a href="{% url 'delete' todo.id %}" title="Delete" class="">🗑️</a> 
                                     </td>
                                     <td>
-                                            <a href="/update/{{todo.id}}"  class="">⚙️</a> 
+                                            <a href="{% url 'update' todo.id %}"  class="">⚙️</a> 
 
                                     </td>
                                 </tr>
@@ -86,6 +87,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <p>Tamamlanan todoların sayısı {{done_count}} / {{todos | length}} </p>
                     {%endif%}
                 </div>
             </div>
