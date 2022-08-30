@@ -56,8 +56,8 @@ $ git clone https://github.com/your-user-name/your-project-name
     > env/Scripts/activate (for win OS)
     $ source env/bin/activate (for macOs/linux OS)
     $ pip install -r requirements.txt
-
-# Add .env file
+# Edit .backend.env to .env
+# Add SECRET_KEY in .env file
 
 # Run the app
     $ python manage.py runserver
