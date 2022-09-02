@@ -2,7 +2,6 @@
 
 <h1 align="center">ToDo App</h1>
 
-
 <div align="center">
   <h3>
     <a href="https://{your-demo-link.your-domain}">
@@ -12,8 +11,8 @@
     <a href="https://{your-url-to-the-solution}">
       Project
     </a>
- 
-  </h3>
+
+</h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -46,8 +45,10 @@
 
 <!-- This is an example, please update according to your application -->
 
-To clone and run this application, you'll need [Git](https://git-scm.com) 
+To clone and run this application, you'll need [Git](https://git-scm.com)
+
 ```bash
+
 # Clone this repository
 $ git clone https://github.com/your-user-name/your-project-name
 
@@ -56,7 +57,9 @@ $ git clone https://github.com/your-user-name/your-project-name
     > env/Scripts/activate (for win OS)
     $ source env/bin/activate (for macOs/linux OS)
     $ pip install -r requirements.txt
+
 # Edit .backend.env to .env
+
 # Add SECRET_KEY in .env file
 
 # Run the app
@@ -64,12 +67,12 @@ $ git clone https://github.com/your-user-name/your-project-name
 ```
 
 ## Acknowledgements
+
 - Information for your projects
 
 ## Contact
 
 - Website [your-website.com](https://{your-web-site-link})
 - GitHub [@your-username](https://{github.com/your-usermame})
-
 - Linkedin [@your-linkedin](https://{linkedin.com/your-username})
 - Twitter [@your-twitter](https://{twitter.com/your-username})
